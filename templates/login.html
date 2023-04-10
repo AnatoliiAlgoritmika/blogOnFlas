@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Login page{% endblock %}
+
+{% block body %}
+    <h1>Мой первый проект на Flask</h1>
+    <form action="/login" class="login_form" method="post">
+        <input type="text" name="login" placeholder="Введите свой логин:">
+        <input type="password" name="password" placeholder="Введите свой пароль:">
+        <button type="submit">Войти</button>
+    </form>
+{% endblock %}

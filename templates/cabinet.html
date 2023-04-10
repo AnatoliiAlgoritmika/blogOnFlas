@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Cabinet{% endblock %}
+
+{% block body %}
+    <section class="cabinet">
+        <div class="cabinet_wrapper">
+            <div class="user_img">
+                <img src="{{ url_for('static', filename='img/user_prew.jpg') }}" alt="user">
+            </div>
+            <div class="user_name">{{ user[1] }}</div>
+            <div class="user_lastname">{{ user[2] }}</div>
+
+            <form action="cabinet" method="post">
+                <input type="text" name="title">
+                <input type="text" name="descr">
+                <button type="submit">send</button>
+            </form>
+
+            <h1>Мои посты:</h1>
+            {% for post in posts %}
+                <div class="post">
+                    <div class="post_title">{{ post[1] }}</div>
+                    <div class="post_descr">{{ post[2] }}</div>
+                    <div class="post_date">{{ post[3] }}</div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}
+
+        

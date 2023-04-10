@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Мой первый проект на Flask</h1>
+    {% for post in result %}
+        <div class="post">
+            <div class="post_title">{{ post[1] }}</div>
+            <div class="post_descr">{{ post[2] }}</div>
+            <div class="post_date">{{ post[3] }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}
